@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0e1420;
+  --fog: #171e2c;
+  --signal: #35c9b0;
+  --stage: #f2a93b;
+  --paper: #edeae0;
+  --slate: #8b93a6;
+  --bloom: #e85d8a;
+  --citrus: #f2734a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-fog: var(--fog);
+  --color-signal: var(--signal);
+  --color-stage: var(--stage);
+  --color-paper: var(--paper);
+  --color-slate: var(--slate);
+  --color-bloom: var(--bloom);
+  --color-citrus: var(--citrus);
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: auto;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-grotesk), system-ui, sans-serif;
+  overflow-x: clip;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--signal) 35%, transparent);
+  color: var(--paper);
+}
+
+/* visible focus states everywhere */
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* custom cursor active: hide the system cursor (desktop only, set via JS) */
+body[data-cursor="on"],
+body[data-cursor="on"] a,
+body[data-cursor="on"] button {
+  cursor: none;
+}
+
+/* eyebrow label utility */
+.eyebrow {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* lenis recommended styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
