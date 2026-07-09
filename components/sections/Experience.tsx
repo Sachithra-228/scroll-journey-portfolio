@@ -2,10 +2,12 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Reveal from "@/components/Reveal";
+import { useTrack } from "@/components/providers/TrackProvider";
 import { experience } from "@/lib/content";
 
 export default function Experience() {
   const reducedMotion = useReducedMotion();
+  const { track } = useTrack();
 
   return (
     <section
@@ -36,7 +38,7 @@ export default function Experience() {
               <p className="font-mono text-xs text-signal">{role.role}</p>
               <h3 className="mt-2 font-display text-2xl">{role.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-slate">
-                {role.summary}
+                {track === "design" ? role.short : role.summary}
               </p>
               <ul className="mt-5 flex flex-wrap gap-2" aria-label="Keywords">
                 {role.tags.map((tag) => (

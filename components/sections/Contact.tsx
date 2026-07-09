@@ -43,9 +43,13 @@ export default function Contact() {
   }, [reducedMotion]);
 
   const socials = [
-    { label: "LinkedIn", href: links.linkedin },
-    { label: "GitHub", href: links.github },
-    { label: "YouTube", href: links.youtube },
+    { label: "linkedin", href: links.linkedin },
+    { label: "github", href: links.github },
+    { label: "youtube", href: links.youtube },
+    { label: "tiktok", href: links.tiktok },
+    { label: "instagram", href: links.instagram },
+    { label: "facebook", href: links.facebook },
+    { label: "whatsapp channel", href: links.whatsappChannel },
   ];
 
   return (
@@ -76,15 +80,24 @@ export default function Contact() {
       <p className="relative mt-6 max-w-md text-slate">{contact.sub}</p>
 
       <motion.a
-        href={`mailto:${links.email}`}
+        href={links.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
         whileHover={hoverReduced ? undefined : { scale: 1.04 }}
         whileTap={hoverReduced ? undefined : { scale: 0.98 }}
         className="relative mt-10 rounded-full bg-stage px-8 py-4 font-mono text-sm font-medium text-ink shadow-[0_0_40px_rgba(242,169,59,0.25)] transition-shadow hover:shadow-[0_0_60px_rgba(242,169,59,0.4)]"
+        aria-label={`Chat on WhatsApp, ${links.phoneDisplay}`}
       >
         {contact.cta} →
       </motion.a>
+      <p className="relative mt-4 font-mono text-xs text-slate">
+        whatsapp · {links.phoneDisplay}
+      </p>
 
-      <ul className="relative mt-12 flex gap-8" aria-label="Social links">
+      <ul
+        className="relative mt-12 flex max-w-xl flex-wrap justify-center gap-x-7 gap-y-3"
+        aria-label="Social links"
+      >
         {socials.map((s) => (
           <li key={s.label}>
             <a
@@ -93,13 +106,22 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="font-mono text-xs tracking-widest text-slate transition-colors hover:text-signal"
             >
-              {s.label.toLowerCase()} ↗
+              {s.label} ↗
             </a>
           </li>
         ))}
       </ul>
 
-      <p className="relative mt-16 font-mono text-[11px] text-slate/60">
+      <a
+        href={links.location}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative mt-8 font-mono text-[11px] tracking-widest text-slate/70 transition-colors hover:text-stage"
+      >
+        find team syncode on the map ↗
+      </a>
+
+      <p className="relative mt-12 font-mono text-[11px] text-slate/60">
         © {new Date().getFullYear()} Sachithra Wijesinghe — built with a single
         teal line and too much coffee
       </p>
