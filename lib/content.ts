@@ -1,6 +1,30 @@
-// All site copy lives here so it can be edited without touching components.
+// Central content store for Sachithra Wijesinghe — Portfolio v2 (Lusion x Lando Edition)
+
+export const identity = {
+  firstName: "SACHITHRA",
+  lastName: "WIJESINGHE",
+  fullName: "Sachithra Wijesinghe",
+  handle: "@sachithra228",
+  email: "wijesinghesachithra@gmail.com",
+  phone: "+94 77 921 4221",
+  location: "Colombo, Sri Lanka",
+  coords: "6.9271° N, 79.8612° E",
+  portrait: "/images/sachithra-portrait.jpg",
+  portraitCutout: "/images/sachithra-cutout.png",
+  robotCutout: "/images/sync-robot-cutout.png",
+  roles: [
+    "CEO @ TEAM SYNCODE",
+    "FULL-STACK ENGINEER",
+    "YOUTUBE CREATOR",
+    "SLBC RADIO PRESENTER",
+  ],
+  tagline:
+    "Engineering award-grade digital products, leading Team SYNCODE, and telling stories on code, YouTube & radio.",
+  bio: "Driven BSc (Hons) IT undergraduate at SLIIT, Founder & CEO of Team SYNCODE, and Full-Stack Software Engineer. I combine high-craft engineering, creative direction, content creation, and stage presence to turn ambitious ideas into memorable digital experiences.",
+};
 
 export const links = {
+  email: "mailto:wijesinghesachithra@gmail.com",
   whatsapp: "https://wa.me/94779214221",
   whatsappChannel: "https://whatsapp.com/channel/0029VbAOUZj6hENiKN0n9K2y",
   linkedin: "https://www.linkedin.com/in/sachithra-wijesinghe-5496a5270/",
@@ -9,58 +33,59 @@ export const links = {
   tiktok: "https://www.tiktok.com/@sachithra228",
   facebook: "https://www.facebook.com/sachithra.wijesinghe.77",
   instagram: "https://www.instagram.com/sachithra_228/",
+  syncode: "https://www.teamsyncode.com/",
   location: "https://share.google/InGNgMW0bzNBDfKBX",
-  phoneDisplay: "+94 77 921 4221",
 };
 
-export const hero = {
-  eyebrow: "software engineer — ui/ux — presenter",
-  name: "Sachithra Wijesinghe",
-  statement:
-    "I build full-stack products end to end — and I care as much about how they feel as how they run.",
-  scrollCue: "scroll to begin",
-};
+export const chapters = [
+  { id: "hero", num: "01", label: "INITIATE" },
+  { id: "clone", num: "02", label: "THE CLONE" },
+  { id: "syncode", num: "03", label: "SYNCODE" },
+  { id: "engineering", num: "04", label: "ENGINEERING" },
+  { id: "arsenal", num: "05", label: "ARSENAL" },
+  { id: "creator", num: "06", label: "ON AIR" },
+  { id: "contact", num: "07", label: "TRANSMIT" },
+] as const;
 
 export const education = [
   {
-    title: "BSc (Hons) Information Technology",
-    place: "SLIIT",
-    period: "2023 — present",
-    note: "Sri Lanka Institute of Information Technology",
+    degree: "BSc (Hons) in Information Technology",
+    institution: "SLIIT — Malabe, Sri Lanka",
+    period: "Jun 2023 — Present",
+    detail: "Specializing in Information Technology",
   },
   {
-    title: "G.C.E. Advanced Level — bio science stream",
-    place: "Dharmapala College",
+    degree: "G.C.E. Advanced Level — Bio Science",
+    institution: "Dharmapala College, Pannipitiya",
     period: "2021",
-    note: "",
+    detail: "Science Stream",
   },
   {
-    title: "G.C.E. Ordinary Level",
-    place: "Dharmapala College",
+    degree: "G.C.E. Ordinary Level",
+    institution: "Dharmapala College, Pannipitiya",
     period: "2016",
-    note: "",
+    detail: "Foundation",
   },
 ];
 
 export const experience = {
   company: "Liveroom Technologies",
-  period: "Jun 2025 — Jun 2026",
-  roles: [
+  role: "Software Engineer Intern",
+  period: "Jun 2025 — Jun 2026 · 1 Year",
+  projects: [
     {
       title: "Agriculture Prediction System",
-      role: "Full-stack developer",
+      role: "Full-Stack Developer",
       summary:
-        "A multi-stakeholder platform connecting farmers, drivers, sellers and government users around crop predictions — one product, four very different audiences.",
-      short: "One platform, four audiences — farmers to government.",
-      tags: ["multi-stakeholder", "platform", "full-stack"],
+        "Digital agriculture prediction platform connecting farmers, drivers, sellers, and government stakeholders — streamlining workflows and enabling data-driven crop & logistics decisions.",
+      tags: ["Multi-Stakeholder", "Data Platform", "Full-Stack"],
     },
     {
-      title: "StrideLanka",
-      role: "Full-stack developer",
+      title: "StrideLanka Travel-Tech Platform",
+      role: "Key Full-Stack Developer",
       summary:
-        "A travel-tech platform for building itineraries across Sri Lanka — turning trip planning into something closer to storytelling than spreadsheets.",
-      short: "Trip planning that feels like storytelling.",
-      tags: ["travel-tech", "itineraries", "full-stack"],
+        "Next-gen travel-tech platform empowering travel agencies and global explorers to discover Sri Lanka and generate personalized, story-driven itineraries.",
+      tags: ["Travel-Tech", "Itinerary Engine", "Full-Stack"],
     },
   ],
 };
@@ -68,211 +93,247 @@ export const experience = {
 export type SyncodeSite = {
   name: string;
   tag: string;
+  year: string;
   desc: string;
   url?: string;
-  img?: string; // screenshot in /public/sites
+  img?: string;
 };
 
 export const syncode = {
-  role: "Founder & lead web developer",
-  period: "2024 — present",
-  blurb:
-    "A software engineering studio I founded to ship real sites for real clients — design, build and launch, end to end.",
+  role: "Founder, CEO & Lead Developer",
+  period: "2024 — Present",
   url: "https://www.teamsyncode.com/",
+  blurb:
+    "I founded Team SYNCODE to engineer bold, high-converting websites and custom digital products for ambitious brands — owning strategy, UI/UX, full-stack architecture, and launch.",
+  stats: [
+    { value: "09+", label: "SHIPPED PLATFORMS" },
+    { value: "100%", label: "END-TO-END DELIVERY" },
+    { value: "24/7", label: "STUDIO VELOCITY" },
+  ],
   sites: [
     {
       name: "Team SYNCODE",
-      tag: "studio",
-      desc: "The studio's own home — we build software that scales.",
+      tag: "AGENCY STUDIO",
+      year: "2025",
+      desc: "Our flagship creative engineering studio — building software & brands that scale.",
       url: "https://www.teamsyncode.com/",
       img: "/sites/syncode.jpg",
     },
     {
       name: "ChinaLanka Motors",
-      tag: "automotive",
-      desc: "EV showcase with model pages and test-drive booking.",
+      tag: "AUTOMOTIVE EV",
+      year: "2025",
+      desc: "Next-gen EV showroom with interactive vehicle pages and test-drive booking.",
       url: "https://www.chinalankamotors.com/",
       img: "/sites/chinalanka.jpg",
     },
     {
       name: "JayasVictory Travels",
-      tag: "travel",
-      desc: "Curated island adventures, crafted by local experts.",
+      tag: "TRAVEL & TOURS",
+      year: "2025",
+      desc: "Curated Sri Lankan island adventures engineered for high-conversion discovery.",
       url: "https://www.jayasvictorytravels.com/",
       img: "/sites/jayasvictory.jpg",
     },
     {
       name: "UnicareConnect",
-      tag: "education",
-      desc: "Financial aid, wellness and mentorship for students, in one place.",
+      tag: "EDTECH PLATFORM",
+      year: "2025",
+      desc: "Student-support ecosystem uniting career pathways, mentorship, and financial aid.",
       url: "https://www.unicareconnect.com/",
       img: "/sites/unicare.jpg",
     },
     {
       name: "Wasantha Construction",
-      tag: "construction",
-      desc: "Steel fabrication with quotes, projects and 24/7 support.",
+      tag: "INDUSTRIAL",
+      year: "2025",
+      desc: "Steel fabrication showcase featuring project portfolios, quotes, and 24/7 support.",
       url: "https://wasantha-construction.vercel.app/",
       img: "/sites/wasantha.jpg",
     },
     {
       name: "ITSC — SLIIT",
-      tag: "community",
-      desc: "The IT student community's events, committee and gallery.",
+      tag: "COMMUNITY",
+      year: "2025",
+      desc: "Official digital home for the IT Student Community — events, committee & gallery.",
       url: "https://itsc-website-design.vercel.app/",
       img: "/sites/itsc.jpg",
     },
     {
       name: "REHOB",
-      tag: "music",
-      desc: "The home of Sri Lankan electronic dance music.",
+      tag: "EDM & MUSIC",
+      year: "2025",
+      desc: "High-voltage home of Sri Lankan electronic dance music culture and live releases.",
       url: "https://rehob-edm-platform.vercel.app/",
       img: "/sites/rehob.jpg",
     },
     {
       name: "Maison Ashri",
-      tag: "décor",
-      desc: "Handcrafted fabric décor — warm, soft and personal.",
+      tag: "FASHION & DÉCOR",
+      year: "2024",
+      desc: "Handcrafted fabric & fashion brand experience — tactile, minimal, and warm.",
       url: "https://maisonashri.vercel.app/",
       img: "/sites/maisonashri.jpg",
     },
     {
       name: "Global Campus",
-      tag: "education",
-      desc: "International education platform for Sri Lankan students.",
+      tag: "EDUCATION",
+      year: "2024",
+      desc: "International academic programs, institution details, and student enquiry pathways.",
     },
   ] satisfies SyncodeSite[],
 };
 
-export type Project = {
+export type FeaturedProject = {
+  id: string;
   name: string;
+  category: string;
   stack: string[];
-  design: string; // ui/ux-track framing — short and visual
-  backend: string; // backend-track framing — architecture and stack
+  designPitch: string;
+  archPitch: string;
+  metric: string;
 };
 
-export const projects: Project[] = [
+export const featuredProjects: FeaturedProject[] = [
   {
+    id: "uniflow",
     name: "UniFlow",
-    stack: ["Java", "Spring Boot", "React", "PostgreSQL", "Google OAuth2"],
-    design:
-      "A campus operations hub where every role — student, lecturer, admin — lands on a view shaped around their day.",
-    backend:
-      "Layered Spring Boot services behind a React front end, with a relational PostgreSQL schema modelling campus resources and Google OAuth2 handling sign-in across roles.",
+    category: "SMART CAMPUS HUB",
+    stack: ["Java 17", "Spring Boot", "PostgreSQL", "React", "Google OAuth2"],
+    designPitch:
+      "Role-adaptive campus operations hub where students, lecturers, and admins land on a clean command view tailored to their day.",
+    archPitch:
+      "Layered Spring Boot + Spring Security microservices backed by relational PostgreSQL, React/Vite frontend, and role-based Google OAuth2 SSO.",
+    metric: "FULL-STACK ENTERPRISE",
   },
   {
+    id: "phishing-ai",
+    name: "Phishing Detection AI",
+    category: "CYBERSECURITY & ML",
+    stack: ["Python", "FastAPI", "MongoDB", "Machine Learning", "Chrome Ext"],
+    designPitch:
+      "Human-readable security intelligence — a real-time dashboard & browser extension that explains exactly why an email is risky.",
+    archPitch:
+      "Hybrid ML + rule-based email parser served over async FastAPI with MongoDB telemetry, powering both a live dashboard and Chrome extension.",
+    metric: "HYBRID ML ENGINE",
+  },
+  {
+    id: "rasamenu",
     name: "RasaMenu",
-    stack: ["Next.js", "SaaS", "QR menus"],
-    design:
-      "Scan, browse, order — QR digital menus that feel like the restaurant they belong to, not a PDF.",
-    backend:
-      "A multi-tenant SaaS platform serving QR-linked digital menus for restaurants, cafés and hotels in Sri Lanka.",
+    category: "MULTI-TENANT SAAS",
+    stack: ["Next.js", "TypeScript", "SaaS", "QR Menus"],
+    designPitch:
+      "Scan, browse, order — tactile QR digital menus that carry a restaurant's true brand atmosphere instead of a static PDF.",
+    archPitch:
+      "Multi-tenant Next.js SaaS architecture serving fast, mobile-first digital menus for restaurants, cafés, and boutique hotels across Sri Lanka.",
+    metric: "HOSPITALITY SAAS",
   },
   {
-    name: "Phishing detection AI",
-    stack: ["Python", "FastAPI", "MongoDB", "ML", "Chrome extension"],
-    design:
-      "Security tooling people actually read — a dashboard that explains why a link looks suspicious, in plain language.",
-    backend:
-      "An ML classifier served over FastAPI with MongoDB storage, consumed by both a reporting dashboard and a Chrome extension calling the same prediction API.",
-  },
-  {
-    name: "Singlish → Sinhala test suite",
+    id: "singlish-qa",
+    name: "Singlish → Sinhala QA",
+    category: "TEST AUTOMATION",
     stack: ["Python", "Playwright", "OpenPyXL"],
-    design:
-      "The invisible kind of UX work — 50+ automated checks that transliteration behaves the way a Sinhala speaker expects.",
-    backend:
-      "A Playwright-driven suite of 50+ transliteration cases with OpenPyXL reporting, so regressions show up as a spreadsheet diff instead of a user complaint.",
+    designPitch:
+      "Invisible UX craftsmanship — verifying that Singlish-to-Sinhala transliteration behaves naturally for everyday Sri Lankan speakers.",
+    archPitch:
+      "Automated Playwright regression suite executing 50+ transliteration test cases with automated OpenPyXL Excel diff reporting.",
+    metric: "50+ AUTOMATED CASES",
   },
 ];
 
-export type Extra = {
-  name: string;
-  note: string;
-  kind: "mobile" | "web";
-  url?: string;
-};
-
-export const extras: Extra[] = [
-  { name: "SafeAura", note: "personal safety", kind: "mobile" },
-  { name: "HabitMate", note: "habit tracking", kind: "mobile" },
-  { name: "Luna PetCare", note: "pet care", kind: "mobile" },
-  { name: "EcoStay Retreat", note: "eco-resort booking", kind: "mobile" },
+export const mobileAndExtraProjects = [
+  { name: "SafeAura", kind: "ANDROID", note: "Women & child safety SOS alerts, live GPS & trusted contacts" },
+  { name: "HabitMate", kind: "MOBILE", note: "Daily routines, habit streaks & personal productivity" },
+  { name: "Luna PetCare", kind: "MOBILE", note: "Pet care schedules, health logs & activity tracker" },
+  { name: "EcoStay Retreat", kind: "MOBILE", note: "Eco-resort discovery, stays & booking user flows" },
   {
     name: "Hotel Seven Way",
-    note: "hotel website",
-    kind: "web",
+    kind: "WEB",
+    note: "Boutique hospitality web experience",
     url: "https://hotel-seven-way.vercel.app",
   },
-  { name: "Falcon Holidays", note: "travel website", kind: "web" },
-  { name: "GatherUp", note: "events web app", kind: "web" },
   {
-    name: "Travel portal",
-    note: "interactive registration portal",
-    kind: "web",
+    name: "Travel Portal",
+    kind: "WEB",
+    note: "Interactive registration & travel portal",
     url: "https://travel-dom-interactive-porta.vercel.app",
   },
+  { name: "Falcon Holidays", kind: "WEB", note: "Travel agency showcase" },
+  { name: "GatherUp", kind: "WEB", note: "Community events web application" },
 ];
 
-// Reconstructed from the technologies named across projects and coursework —
-// the original CV skill list should replace this if it differs.
-export const skills: { category: string; items: string[] }[] = [
+export const skillGroups = [
   {
-    category: "languages",
-    items: ["Java", "Python", "JavaScript", "TypeScript", "Kotlin", "SQL"],
+    category: "LANGUAGES",
+    code: "01",
+    items: ["Java", "Kotlin", "TypeScript", "JavaScript", "Python", "C / C++", "PHP", "R", "SQL"],
   },
   {
-    category: "frontend",
-    items: ["React", "Next.js", "Tailwind CSS", "HTML & CSS", "Framer Motion"],
+    category: "FRONTEND & 3D",
+    code: "02",
+    items: ["Next.js", "React.js", "Tailwind CSS", "Three.js / WebGL", "GSAP", "Framer Motion", "UI/UX Systems"],
   },
   {
-    category: "backend",
-    items: ["Spring Boot", "FastAPI", "Node.js", "REST APIs", "OAuth2"],
+    category: "BACKEND & API",
+    code: "03",
+    items: ["Spring Boot", "Node.js", "Express.js", "FastAPI", "REST APIs", "Google OAuth2", "Authentication"],
   },
   {
-    category: "databases",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "Firebase"],
+    category: "DATABASES",
+    code: "04",
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Firebase Realtime DB", "SQLite"],
   },
   {
-    category: "tools",
-    items: ["Git & GitHub", "Figma", "Playwright", "Postman", "Android Studio"],
+    category: "MOBILE & TOOLS",
+    code: "05",
+    items: ["Android Studio", "Figma", "Git & GitHub", "GitLab", "Playwright", "Power BI", "Trello"],
   },
 ];
 
-export const affiliations = [
-  "ITSC",
-  "AIESEC in SLIIT",
-  "SLIIT Showcasing Team",
-  "Rotaract Club of SLIIT",
-  "SLBC radio presenter",
-];
-
-// Recent uploads from youtube.com/@sachithra228 — thumbnails come from
-// i.ytimg.com at render time, so no assets to maintain here.
-export type Video = { id: string; title: string };
+export type Video = { id: string; title: string; tag: string };
 
 export const videos: Video[] = [
   {
     id: "U4XVTPnwGCU",
-    title: "Power BI for beginners — install & setup (Sinhala)",
+    title: "Power BI for Beginners — Install & Setup (Sinhala)",
+    tag: "TUTORIAL",
   },
   {
     id: "672ZJsgpHQ0",
-    title: "Power BI labsheet 08 — dashboard design",
+    title: "Power BI Labsheet 08 — Dashboard Design",
+    tag: "DATA VIZ",
   },
   {
     id: "hra3su3Y4Mk",
-    title: "IT year 3 semester 2 overview",
+    title: "IT Year 3 Semester 2 — Complete Roadmap",
+    tag: "SLIIT GUIDE",
   },
   {
     id: "GubQpNzPEm8",
-    title: "IT3040 automation — complete guide (Sinhala)",
+    title: "IT3040 Automation — Complete Guide (Sinhala)",
+    tag: "AUTOMATION",
   },
 ];
 
-export const contact = {
-  eyebrow: "the trail ends here",
-  heading: "Let's make something worth presenting.",
-  sub: "Whether it's a product, a platform or a late-night idea — I'd love to hear about it.",
-  cta: "let's talk",
-};
+export const affiliations = [
+  { org: "SLBC — Sri Lanka Broadcasting Corporation", role: "Radio Presenter", highlight: true },
+  { org: "ITSC — SLIIT", role: "Assistant Secretary", highlight: false },
+  { org: "AIESEC in SLIIT", role: "Team Leader", highlight: false },
+  { org: "SLIIT Showcasing Team", role: "Active Leader", highlight: false },
+  { org: "Rotaract Club of SLIIT", role: "Active Member", highlight: false },
+];
+
+export const references = [
+  {
+    name: "Dr. L. L. Ekanayake",
+    title: "Senior Lecturer, Dept. of Civil Engineering",
+    org: "University of Moratuwa",
+    note: "Academic Reference & Mentor",
+  },
+  {
+    name: "Prof. Chandana Jayalath",
+    title: "Chairman, CIDA · Chartered Quantity Surveyor",
+    org: "Construction Industry Development Authority",
+    note: "Industry Reference & Mentor",
+  },
+];
