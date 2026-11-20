@@ -1,27 +1,29 @@
 import type { Metadata } from "next";
-import { Fraunces, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Syne, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
-  axes: ["opsz"],
+  weight: ["600", "700", "800"],
 });
 
 const grotesk = Space_Grotesk({
   variable: "--font-grotesk",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Sachithra Wijesinghe — software engineer, ui/ux, presenter",
+  title: "SACHITHRA WIJESINGHE — CEO @ Team SYNCODE · Creative Full-Stack Engineer",
   description:
-    "Full-stack developer and UI/UX enthusiast from Sri Lanka. BSc (Hons) IT undergraduate at SLIIT, founder of Team SYNCODE, radio presenter at SLBC.",
+    "Interactive 3D creative portfolio of Sachithra Wijesinghe — Founder & CEO of Team SYNCODE, Full-Stack Software Engineer, YouTube Creator (@sachithra228), and SLBC Radio Presenter.",
 };
 
 export default function RootLayout({
@@ -32,9 +34,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${grotesk.variable} ${jetbrains.variable} antialiased`}
+      className={`${syne.variable} ${grotesk.variable} ${jetbrains.variable} antialiased`}
     >
-      <body className="bg-ink text-paper font-body">{children}</body>
+      <body className="bg-void text-bone font-body selection:bg-volt selection:text-void">
+        {children}
+      </body>
     </html>
   );
 }
